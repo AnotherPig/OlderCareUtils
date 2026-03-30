@@ -1,4 +1,4 @@
-package com.hsit.tobacco.myoldercareutil
+package com.spanzy.oldercare
 
 import org.junit.Test
 

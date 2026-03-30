@@ -1,4 +1,4 @@
-package com.hsit.tobacco.myoldercareutil.ui.theme
+package com.spanzy.oldercare.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,4 +1,4 @@
-package com.hsit.tobacco.myoldercareutil.ui.theme
+package com.spanzy.oldercare.ui.theme
 
 import android.app.Activity
 import android.os.Build

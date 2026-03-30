@@ -1,4 +1,4 @@
-package com.hsit.tobacco.myoldercareutil
+package com.spanzy.oldercare
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.hsit.tobacco.myoldercareutil.ui.theme.MyOlderCareUtilTheme
+import com.spanzy.oldercare.ui.theme.MyOlderCareUtilTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
