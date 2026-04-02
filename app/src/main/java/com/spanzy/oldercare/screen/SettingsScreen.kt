@@ -332,6 +332,25 @@ fun SettingsScreen(
                                 color = if (themeConfig.darkMode) Color.White else Color.Black
                             )
                         }
+                    } else {
+                        // 选择图片按钮
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .clickable(onClick = { onImageUriChange("pick") })
+                                .background(
+                                    MaterialTheme.colorScheme.primary,
+                                    RoundedCornerShape(8.dp)
+                                )
+                                .padding(12.dp),
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = "选择图片",
+                                fontSize = 16.sp,
+                                color = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
                     }
                 }
             }

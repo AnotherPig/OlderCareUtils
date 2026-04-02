@@ -37,6 +37,7 @@ import java.util.UUID
 class MainActivity : ComponentActivity() {
 
     internal lateinit var settingsRepository: SettingsRepository
+    internal var pendingOpenImagePicker = false
     internal val scope = CoroutineScope(
         Dispatchers.Main + SupervisorJob()
     )
@@ -158,6 +159,12 @@ class MainActivity : ComponentActivity() {
             intent.removeExtra("widget_click_announce")
         }
 
+        // 检查是否从图片小组件点击进入（无图片时自动打开图片选择器）
+        pendingOpenImagePicker = intent.getBooleanExtra("widget_open_image_picker", false)
+        if (pendingOpenImagePicker) {
+            intent.removeExtra("widget_open_image_picker")
+        }
+
         // 如果定时播报已开启，自动启动前台服务
         scope.launch {
             val config = settingsRepository.announcementConfig.first()
@@ -255,6 +262,17 @@ private fun MyApp() {
     // 返回键处理 - 非主页面返回主页，主页才退出应用
     BackHandler(enabled = currentScreen != Screen.Main) {
         currentScreen = Screen.Main
+    }
+
+    // 处理从图片小组件跳转的图片选择请求
+    LaunchedEffect(Unit) {
+        if (activity.pendingOpenImagePicker) {
+            activity.pendingOpenImagePicker = false
+            currentScreen = Screen.Settings
+            // 等待设置页渲染后再打开图片选择器
+            delay(300)
+            activity.pickImageLauncher.launch("image/*")
+        }
     }
 
     MyOlderCareUtilTheme(darkMode = themeConfig.darkMode) {

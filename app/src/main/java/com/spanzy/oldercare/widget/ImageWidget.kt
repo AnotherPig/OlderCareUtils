@@ -83,10 +83,11 @@ abstract class BaseImageWidgetReceiver : AppWidgetProvider() {
             appWidgetIds.forEach { widgetId ->
                 val views = RemoteViews(context.packageName, R.layout.image_widget_layout)
 
-                // 点击打开主应用
+                // 点击打开主应用，无图片时直接跳转图片选择器
                 val clickIntent = Intent(context, MainActivity::class.java).apply {
                     flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
                     if (widgetClickAnnounce) putExtra("widget_click_announce", true)
+                    if (imageUri == null) putExtra("widget_open_image_picker", true)
                 }
                 val pendingIntent = android.app.PendingIntent.getActivity(
                     context,
