@@ -1,0 +1,64 @@
+<h2>电池详情页 + 语音播报</h2>
+<p class="subtitle">电池信息大图展示 + TTS 语音播报机制</p>
+
+<div class="mockup">
+  <div class="mockup-header">电池详情页</div>
+  <div class="mockup-body">
+    <div style="background:#f5f0e8;color:#1a1a1a;padding:20px;border-radius:12px;min-height:400px;display:flex;flex-direction:column;align-items:center;font-family:system-ui">
+      <!-- 返回 + 标题 -->
+      <div style="width:100%;display:flex;align-items:center;margin-bottom:20px">
+        <div style="font-size:24px;cursor:pointer">← </div>
+        <div style="font-size:22px;font-weight:bold;margin-left:8px">电池电量</div>
+      </div>
+
+      <!-- 大电池图标 -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div style="position:relative;width:140px;height:260px;border:6px solid #1a1a1a;border-radius:20px;padding:8px">
+          <div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);width:50px;height:14px;background:#1a1a1a;border-radius:6px 6px 0 0"></div>
+          <div style="width:100%;height:100%;background:#f0e8d8;border-radius:12px;overflow:hidden;display:flex;align-items:flex-end">
+            <div style="width:100%;height:75%;background:linear-gradient(to top,#16a34a,#4ade80);border-radius:0 0 12px 12px;transition:height 0.5s"></div>
+          </div>
+        </div>
+        <div style="font-size:64px;font-weight:900;margin-top:16px;color:#16a34a">75%</div>
+        <div style="font-size:20px;color:#666;margin-top:4px">🔋 未充电</div>
+      </div>
+
+      <!-- 播报按钮 -->
+      <div style="width:100%;margin-top:20px">
+        <div style="background:#3b82f6;color:#fff;padding:18px;border-radius:16px;text-align:center;font-size:22px;font-weight:bold;cursor:pointer">
+          🔊 语音播报电量
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>语音播报设计</h3>
+<div class="section">
+  <table style="width:100%;border-collapse:collapse;font-size:14px">
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+      <td style="padding:8px;font-weight:bold;width:120px">播报内容（时间）</td>
+      <td style="padding:8px">"现在是 下午 2点30分，2026年3月30日，星期一，农历三月初二"</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+      <td style="padding:8px;font-weight:bold">播报内容（电量）</td>
+      <td style="padding:8px">"当前电池电量 百分之七十五，未充电"</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+      <td style="padding:8px;font-weight:bold">手动触发</td>
+      <td style="padding:8px">主屏播报按钮 / 电池页播报按钮 → 立即播报</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+      <td style="padding:8px;font-weight:bold">定时触发</td>
+      <td style="padding:8px">WorkManager 定时任务，用户可配置间隔（如每整点/每半小时）</td>
+    </tr>
+    <tr style="border-bottom:1px solid rgba(255,255,255,0.1)">
+      <td style="padding:8px;font-weight:bold">免打扰</td>
+      <td style="padding:8px">可设置静音时段（如 22:00-07:00 不播报）</td>
+    </tr>
+    <tr>
+      <td style="padding:8px;font-weight:bold">充电状态</td>
+      <td style="padding:8px">充电中 → 显示 ⚡ + "充电中"，电池颜色变为蓝色</td>
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,94 @@
+<h2>界面配色风格</h2>
+<p class="subtitle">哪种配色方案更适合老年人日常查看？考虑清晰度和长时间观看的舒适度</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#0a0a1a;color:#fff;padding:16px;border-radius:12px;min-height:240px;display:flex;flex-direction:column;font-family:system-ui">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div style="font-size:48px;font-weight:900;color:#e0e0ff;letter-spacing:2px">14:30</div>
+          <div style="font-size:18px;margin-top:8px;color:#a0a0cc">2026年3月30日 星期一</div>
+          <div style="font-size:16px;color:#8080aa">农历三月初二</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div style="flex:1;background:rgba(255,255,255,0.06);padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">🔋</div>
+            <div style="font-size:18px;font-weight:bold;color:#4ade80">75%</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.06);padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">🔊</div>
+            <div style="font-size:14px;color:#ccc">播报</div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,0.06);padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">⚙️</div>
+            <div style="font-size:14px;color:#ccc">设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. 深色背景 + 高亮文字</h3>
+      <p>深黑底色 + 白色/亮色大字。对比度最高，夜间查看舒适，省电（OLED 屏）</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f5f0e8;color:#1a1a1a;padding:16px;border-radius:12px;min-height:240px;display:flex;flex-direction:column;font-family:system-ui">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div style="font-size:48px;font-weight:900;color:#1a1a1a;letter-spacing:2px">14:30</div>
+          <div style="font-size:18px;margin-top:8px;color:#555">2026年3月30日 星期一</div>
+          <div style="font-size:16px;color:#777">农历三月初二</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div style="flex:1;background:#e8e0d0;padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">🔋</div>
+            <div style="font-size:18px;font-weight:bold;color:#16a34a">75%</div>
+          </div>
+          <div style="flex:1;background:#e8e0d0;padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">🔊</div>
+            <div style="font-size:14px;color:#555">播报</div>
+          </div>
+          <div style="flex:1;background:#e8e0d0;padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">⚙️</div>
+            <div style="font-size:14px;color:#555">设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. 暖色浅底 + 深色文字</h3>
+      <p>米白/暖黄底色 + 深色文字。纸质书般温和，白天查看舒适，长时间不刺眼</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#ffffff;color:#1a1a1a;padding:16px;border-radius:12px;min-height:240px;display:flex;flex-direction:column;font-family:system-ui;border:1px solid #e0e0e0">
+        <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <div style="font-size:48px;font-weight:900;color:#1a1a1a;letter-spacing:2px">14:30</div>
+          <div style="font-size:18px;margin-top:8px;color:#555">2026年3月30日 星期一</div>
+          <div style="font-size:16px;color:#888">农历三月初二</div>
+        </div>
+        <div style="display:flex;gap:8px">
+          <div style="flex:1;background:#f0f0f0;padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">🔋</div>
+            <div style="font-size:18px;font-weight:bold;color:#16a34a">75%</div>
+          </div>
+          <div style="flex:1;background:#f0f0f0;padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">🔊</div>
+            <div style="font-size:14px;color:#555">播报</div>
+          </div>
+          <div style="flex:1;background:#f0f0f0;padding:12px;border-radius:12px;text-align:center">
+            <div style="font-size:24px">⚙️</div>
+            <div style="font-size:14px;color:#555">设置</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. 白底黑字 + 跟随系统</h3>
+      <p>纯白底 + 黑字，同时支持跟随系统深色模式。最经典清晰，适合所有环境</p>
+    </div>
+  </div>
+</div>

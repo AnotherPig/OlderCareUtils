@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">MyOlderCareUtil</string>
+    <string name="app_name">老家私</string>
+    <string name="clock_widget_description">显示时间、日期、星期和农历的桌面小组件</string>
+    <string name="clock_widget_4x1_description">时钟小组件（4x1 紧凑）- 仅显示时间</string>
+    <string name="clock_widget_4x2_description">时钟小组件（4x2 标准）- 时间、日期、农历</string>
+    <string name="clock_widget_4x3_description">时钟小组件（4x3 大号）- 大字体完整信息</string>
+    <string name="clock_widget_4x4_description">时钟小组件（4x4 超大）- 超大字体</string>
+    <string name="image_widget_2x2_name">桌面图片显示</string>
+    <string name="image_widget_2x2_description">显示您选择的图片（2x2）</string>
+    <string name="image_widget_3x3_name">桌面图片显示</string>
+    <string name="image_widget_3x3_description">显示您选择的图片（3x3）</string>
+    <string name="image_widget_4x4_name">桌面图片显示</string>
+    <string name="image_widget_4x4_description">显示您选择的图片（4x4）</string>
 </resources>

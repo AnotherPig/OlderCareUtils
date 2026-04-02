@@ -2,19 +2,36 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 权限声明 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- TTS 引擎查询权限 -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.TTS_SERVICE" />
+        </intent>
+    </queries>
+
     <application
+        android:name="com.spanzy.oldercare.OlderCareApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyOlderCareUtil">
         <activity
             android:name="com.spanzy.oldercare.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.MyOlderCareUtil">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,6 +39,153 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- uCrop 图片裁剪 Activity -->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.UCrop" />
+
+        <!-- 电池监听服务 -->
+        <service
+            android:name="com.spanzy.oldercare.service.BatteryMonitorService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <!-- 定时播报前台服务 -->
+        <service
+            android:name="com.spanzy.oldercare.service.AnnouncementService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+
+        <!-- FileProvider 用于 uCrop 图片裁剪 -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+
+        <!-- 桌面小组件 4x1 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ClockWidgetReceiver4x1"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_4x1_info" />
+        </receiver>
+
+        <!-- 桌面小组件 4x2 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ClockWidgetReceiver4x2"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_4x2_info" />
+        </receiver>
+
+        <!-- 桌面小组件 4x3 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ClockWidgetReceiver4x3"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_4x3_info" />
+        </receiver>
+
+        <!-- 桌面小组件 4x4 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ClockWidgetReceiver4x4"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/clock_widget_4x4_info" />
+        </receiver>
+
+        <!-- 设置变更广播接收器 - 用于立即刷新小组件 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.SettingsChangeReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.spanzy.oldercare.ACTION_SETTINGS_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 时钟每分钟更新广播接收器 + 开机重新调度 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ClockTickReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 图片显示小组件 2x2 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ImageWidgetReceiver2x2"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/image_widget_2x2_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/image_widget_2x2_info" />
+        </receiver>
+
+        <!-- 图片显示小组件 3x3 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ImageWidgetReceiver3x3"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/image_widget_3x3_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/image_widget_3x3_info" />
+        </receiver>
+
+        <!-- 图片显示小组件 4x4 -->
+        <receiver
+            android:name="com.spanzy.oldercare.widget.ImageWidgetReceiver4x4"
+            android:enabled="true"
+            android:exported="true"
+            android:label="@string/image_widget_4x4_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/image_widget_4x4_info" />
+        </receiver>
     </application>
 
 </manifest>

@@ -1,0 +1,72 @@
+<h2>主界面详细设计</h2>
+<p class="subtitle">大字时钟 + 底部快捷按钮的具体布局</p>
+
+<div class="mockup">
+  <div class="mockup-header">主屏 - 暖色模式</div>
+  <div class="mockup-body">
+    <div style="background:#f5f0e8;color:#1a1a1a;padding:20px;border-radius:12px;min-height:500px;display:flex;flex-direction:column;font-family:system-ui">
+      <!-- 时间区域 -->
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div style="font-size:72px;font-weight:900;letter-spacing:4px;color:#1a1a1a;line-height:1">14:30</div>
+        <div style="font-size:24px;margin-top:12px;color:#444">2026年3月30日 星期一</div>
+        <div style="font-size:22px;color:#666;margin-top:4px">农历三月初二</div>
+      </div>
+
+      <!-- 底部快捷按钮 -->
+      <div style="display:flex;gap:12px;margin-top:20px">
+        <div style="flex:1;background:#e8e0d0;padding:16px 8px;border-radius:16px;text-align:center;cursor:pointer">
+          <div style="font-size:36px">🔋</div>
+          <div style="font-size:22px;font-weight:bold;color:#16a34a;margin-top:4px">75%</div>
+        </div>
+        <div style="flex:1;background:#e8e0d0;padding:16px 8px;border-radius:16px;text-align:center;cursor:pointer">
+          <div style="font-size:36px">🔊</div>
+          <div style="font-size:20px;color:#444;margin-top:4px">播报</div>
+        </div>
+        <div style="flex:1;background:#e8e0d0;padding:16px 8px;border-radius:16px;text-align:center;cursor:pointer">
+          <div style="font-size:36px">⚙️</div>
+          <div style="font-size:20px;color:#444;margin-top:4px">设置</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height:24px"></div>
+
+<div class="mockup">
+  <div class="mockup-header">主屏 - 深色模式</div>
+  <div class="mockup-body">
+    <div style="background:#0a0a1a;color:#fff;padding:20px;border-radius:12px;min-height:500px;display:flex;flex-direction:column;font-family:system-ui">
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center">
+        <div style="font-size:72px;font-weight:900;letter-spacing:4px;color:#e0e0ff;line-height:1">14:30</div>
+        <div style="font-size:24px;margin-top:12px;color:#a0a0cc">2026年3月30日 星期一</div>
+        <div style="font-size:22px;color:#8080aa;margin-top:4px">农历三月初二</div>
+      </div>
+      <div style="display:flex;gap:12px;margin-top:20px">
+        <div style="flex:1;background:rgba(255,255,255,0.08);padding:16px 8px;border-radius:16px;text-align:center">
+          <div style="font-size:36px">🔋</div>
+          <div style="font-size:22px;font-weight:bold;color:#4ade80;margin-top:4px">75%</div>
+        </div>
+        <div style="flex:1;background:rgba(255,255,255,0.08);padding:16px 8px;border-radius:16px;text-align:center">
+          <div style="font-size:36px">🔊</div>
+          <div style="font-size:20px;color:#ccc;margin-top:4px">播报</div>
+        </div>
+        <div style="flex:1;background:rgba(255,255,255,0.08);padding:16px 8px;border-radius:16px;text-align:center">
+          <div style="font-size:36px">⚙️</div>
+          <div style="font-size:20px;color:#ccc;margin-top:4px">设置</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>交互说明</h3>
+<div class="section">
+  <ul style="font-size:15px;line-height:1.8">
+    <li><strong>时间/日期/农历</strong>：居中大字显示，每秒更新时间</li>
+    <li><strong>🔋 按钮</strong>：点击进入电池详情页（大电池图 + 电量百分比 + 充电状态）</li>
+    <li><strong>🔊 按钮</strong>：点击立即语音播报当前时间和电量</li>
+    <li><strong>⚙️ 按钮</strong>：点击进入设置页（字体大小、显示内容、播报计划、深色模式）</li>
+    <li><strong>电池百分比</strong>：电池按钮上实时显示当前电量</li>
+  </ul>
+</div>

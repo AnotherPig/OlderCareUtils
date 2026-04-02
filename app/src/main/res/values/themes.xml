@@ -2,4 +2,10 @@
 <resources>
 
     <style name="Theme.MyOlderCareUtil" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- uCrop 图片裁剪专用主题，不使用 edge-to-edge -->
+    <style name="Theme.UCrop" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowLayoutInDisplayCutoutMode">never</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 时钟小组件 4x1 - 仅显示时间，紧凑横条 -->
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="294dp"
+    android:minHeight="40dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="1"
+    android:updatePeriodMillis="900000"
+    android:initialLayout="@layout/clock_widget_layout"
+    android:resizeMode="horizontal|vertical"
+    android:description="@string/clock_widget_4x1_description"
+    android:widgetCategory="home_screen" />

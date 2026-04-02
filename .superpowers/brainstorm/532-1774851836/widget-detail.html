@@ -1,0 +1,48 @@
+<h2>桌面小组件设计</h2>
+<p class="subtitle">Glance 实现的桌面小组件，两种尺寸</p>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">4x2 小组件</div>
+    <div class="mockup-body">
+      <div style="background:#f5f0e8;color:#1a1a1a;padding:16px;border-radius:12px;font-family:system-ui">
+        <div style="display:flex;align-items:baseline;gap:8px">
+          <span style="font-size:42px;font-weight:900">14:30</span>
+          <span style="font-size:14px;color:#888">星期一</span>
+        </div>
+        <div style="font-size:15px;color:#555;margin-top:4px">2026年3月30日</div>
+        <div style="font-size:14px;color:#777">农历三月初二</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">4x3 大组件</div>
+    <div class="mockup-body">
+      <div style="background:#f5f0e8;color:#1a1a1a;padding:16px;border-radius:12px;font-family:system-ui;display:flex;flex-direction:column;justify-content:center;min-height:160px">
+        <div style="font-size:56px;font-weight:900;text-align:center;letter-spacing:3px">14:30</div>
+        <div style="font-size:18px;text-align:center;color:#555;margin-top:8px">2026年3月30日 星期一</div>
+        <div style="font-size:16px;text-align:center;color:#777">农历三月初二</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid rgba(0,0,0,0.1)">
+          <span style="font-size:16px">🔋</span>
+          <div style="flex:1;background:rgba(0,0,0,0.1);border-radius:3px;height:8px">
+            <div style="background:#16a34a;width:75%;height:100%;border-radius:3px"></div>
+          </div>
+          <span style="font-size:14px;font-weight:bold">75%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>小组件规则</h3>
+<div class="section">
+  <ul style="font-size:15px;line-height:1.8">
+    <li><strong>两种尺寸</strong>：4x2（紧凑）和 4x3（含电量条），用户添加时可选</li>
+    <li><strong>点击小组件</strong>：打开 app 主界面</li>
+    <li><strong>更新频率</strong>：每分钟刷新时间显示，通过 Glance 更新机制</li>
+    <li><strong>显示内容</strong>：跟随 app 内设置（时间/日期/农历/星期各自可开关）</li>
+    <li><strong>配色</strong>：跟随 app 内的深色/暖色模式设置</li>
+    <li><strong>字体</strong>：使用系统字体（Glance 限制），通过粗细和大小区分层级</li>
+  </ul>
+</div>

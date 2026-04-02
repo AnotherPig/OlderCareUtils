@@ -1,0 +1,71 @@
+<h2>播报计划（扩展版）</h2>
+<p class="subtitle">增加低电量阈值播报、播报内容选择等</p>
+
+<div class="mockup">
+  <div class="mockup-header">播报设置 - 扩展版</div>
+  <div class="mockup-body">
+    <div style="background:#f5f0e8;color:#1a1a1a;padding:20px;border-radius:12px;font-family:system-ui;display:flex;flex-direction:column;gap:20px">
+      <div style="font-size:24px;font-weight:bold">播报计划</div>
+
+      <!-- 定时播报 -->
+      <div style="background:#e8e0d0;padding:16px;border-radius:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:18px;font-weight:bold">定时播报</span>
+          <div style="width:48px;height:28px;background:#3b82f6;border-radius:14px;position:relative"><div style="position:absolute;right:2px;top:2px;width:24px;height:24px;background:#fff;border-radius:50%"></div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:18px">播报间隔</span>
+          <span style="font-size:16px;color:#3b82f6">每整点 ▾</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:18px">免打扰时段</span>
+          <span style="font-size:16px;color:#3b82f6">22:00-07:00 ▾</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:18px">播报内容</span>
+          <span style="font-size:16px;color:#3b82f6">时间+电量 ▾</span>
+        </div>
+        <div style="font-size:13px;color:#888;margin-top:8px">可选择播报哪些内容：时间、日期、农历、电量</div>
+      </div>
+
+      <!-- 低电量播报 -->
+      <div style="background:#e8e0d0;padding:16px;border-radius:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:18px;font-weight:bold">低电量播报</span>
+          <div style="width:48px;height:28px;background:#3b82f6;border-radius:14px;position:relative"><div style="position:absolute;right:2px;top:2px;width:24px;height:24px;background:#fff;border-radius:50%"></div></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+          <span style="font-size:18px">电量阈值</span>
+          <span style="font-size:16px;color:#ef4444;font-weight:bold">20% ▾</span>
+        </div>
+        <div style="font-size:13px;color:#888">电量低于阈值时自动语音提醒："电池电量低，仅剩百分之二十，请及时充电"</div>
+
+        <div style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:18px">重复提醒间隔</span>
+          <span style="font-size:16px;color:#3b82f6">30分钟 ▾</span>
+        </div>
+        <div style="font-size:13px;color:#888;margin-top:4px">避免频繁播报打扰，设定最小重复间隔</div>
+      </div>
+
+      <!-- 充电状态播报 -->
+      <div style="background:#e8e0d0;padding:16px;border-radius:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <span style="font-size:18px;font-weight:bold">充电完成播报</span>
+          <div style="width:48px;height:28px;background:#3b82f6;border-radius:14px;position:relative"><div style="position:absolute;right:2px;top:2px;width:24px;height:24px;background:#fff;border-radius:50%"></div></div>
+        </div>
+        <div style="font-size:13px;color:#888;margin-top:8px">充满电时语音提醒："充电已完成，电池电量百分之百"</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3>播报计划完整功能</h3>
+<div class="section">
+  <ul style="font-size:15px;line-height:1.8">
+    <li><strong>定时播报</strong>：按设定间隔播报，可选播报内容（时间/日期/农历/电量自由组合）</li>
+    <li><strong>低电量播报</strong>：电量低于阈值（默认20%）自动提醒，可配置阈值和重复间隔</li>
+    <li><strong>充电完成播报</strong>：充满电时提醒拔掉充电器</li>
+    <li><strong>免打扰</strong>：静音时段内所有自动播报静音</li>
+    <li><strong>手动播报</strong>：不受免打扰限制，点击即播报</li>
+  </ul>
+</div>

@@ -11,6 +11,16 @@ android {
         }
     }
 
+    // 签名配置
+    signingConfigs {
+        create("release") {
+            storeFile = file("spanzy.jks")
+            storePassword = "spanzy123456"
+            keyAlias = "spanzy"
+            keyPassword = "spanzy123456"
+        }
+    }
+
     defaultConfig {
         applicationId = "com.spanzy.oldercare"
         minSdk = 23
@@ -28,6 +38,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -48,6 +59,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+
+    // Coil 图片加载
+    implementation("io.coil-kt:coil-compose:2.6.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -55,4 +70,13 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // WorkManager 定时任务
+    implementation(libs.androidx.work.runtime.ktx)
+
+    // DataStore 设置存储
+    implementation(libs.androidx.datastore.preferences)
+
+    // uCrop 图片裁剪库
+    implementation(libs.ucrop)
 }

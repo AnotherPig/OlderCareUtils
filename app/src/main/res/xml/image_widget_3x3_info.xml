@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 图片显示小组件 3x3 -->
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="165dp"
+    android:minHeight="165dp"
+    android:targetCellWidth="3"
+    android:targetCellHeight="3"
+    android:updatePeriodMillis="86400000"
+    android:initialLayout="@layout/image_widget_layout"
+    android:resizeMode="horizontal|vertical"
+    android:description="@string/image_widget_3x3_description"
+    android:widgetCategory="home_screen"
+    android:previewImage="@android:drawable/ic_menu_gallery" />
